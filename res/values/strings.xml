@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MPAndroidChart_Demo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="linechart">线性图表</string>
+    <string name="barchart">柱状图</string>
+    <string name="horizontalchart">水平柱状图</string>
+    <string name="combinedchart">混合图表</string>
+    <string name="piechart">饼图</string>
+    <string name="scatterchart">散列图</string>
+    <string name="candlechart">蜡烛图</string>
+    <string name="radarchart">雷达图</string>
+
+</resources>
