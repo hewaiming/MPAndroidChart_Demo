@@ -12,5 +12,6 @@
     <string name="scatterchart">散列图</string>
     <string name="candlechart">蜡烛图</string>
     <string name="radarchart">雷达图</string>
+    <string name="multi_line_chart">多条线</string>
 
 </resources>

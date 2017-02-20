@@ -7,7 +7,8 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -33,11 +34,13 @@
         </activity>
         <activity android:name="com.example.mpandroidchart_demo.CombinedChartActivity" >
         </activity>
-         <activity android:name="com.example.mpandroidchart_demo.CandleChartActivity" >
+        <activity android:name="com.example.mpandroidchart_demo.CandleChartActivity" >
         </activity>
-         <activity android:name="com.example.mpandroidchart_demo.RadarChartActivity" >
+        <activity android:name="com.example.mpandroidchart_demo.RadarChartActivity" >
         </activity>
-         <activity android:name="com.example.mpandroidchart_demo.ScatterChartActivity" >
+        <activity android:name="com.example.mpandroidchart_demo.ScatterChartActivity" >
+        </activity>
+        <activity android:name="com.example.mpandroidchart_demo.MultiLineChartActivity" >
         </activity>
     </application>
 

@@ -12,6 +12,7 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -29,7 +30,7 @@ public class HorizontalChart extends Activity {
 		super.onCreate(savedInstanceState);
 		MyApplication.getInstance().addActivity(this);
 		init_view();
-		//init_chart();
+		init_chart();
 	}
 
 	private void init_view() {
@@ -47,13 +48,15 @@ public class HorizontalChart extends Activity {
 
 	private void init_chart() {
 
-		/*tvX = new TextView(getApplicationContext());
-		tvY = new TextView(getApplicationContext());
-
-		mSeekBarX = new SeekBar(getApplicationContext());
-		mSeekBarY = new SeekBar(getApplicationContext());
-
-		mChart = new HorizontalBarChart(getApplicationContext());*/
+		/*
+		 * tvX = new TextView(getApplicationContext()); tvY = new
+		 * TextView(getApplicationContext());
+		 * 
+		 * mSeekBarX = new SeekBar(getApplicationContext()); mSeekBarY = new
+		 * SeekBar(getApplicationContext());
+		 * 
+		 * mChart = new HorizontalBarChart(getApplicationContext());
+		 */
 		// mChart.setOnChartValueSelectedListener(this);
 		// mChart.setHighlightEnabled(false);
 
@@ -61,7 +64,7 @@ public class HorizontalChart extends Activity {
 
 		mChart.setDrawValueAboveBar(true);
 
-		// mChart.getDescription().setEnabled(false);
+		mChart.setDescription("Ë®Æ½ÖùÐÎÍ¼");
 
 		// if more than 60 entries are displayed in the chart, no values will be
 		// drawn
@@ -120,31 +123,23 @@ public class HorizontalChart extends Activity {
 		float barWidth = 9f;
 		float spaceForBar = 10f;
 		ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
-
+		ArrayList<String> x = new ArrayList<String>();
 		for (int i = 0; i < count; i++) {
+			x.add(i + "");
 			int val = (int) (Math.random() * range);
-			yVals1.add(new BarEntry(i * spaceForBar, val));
+			yVals1.add(new BarEntry(val, i));
 		}
 
 		BarDataSet set1;
 
-		if (mChart.getData() != null && mChart.getData().getDataSetCount() > 0) {
-			set1 = (BarDataSet) mChart.getData().getDataSetByIndex(0);
-			//set1.setValues(yVals1);
-			mChart.getData().notifyDataChanged();
-			mChart.notifyDataSetChanged();
-		} else {
-			set1 = new BarDataSet(yVals1, "DataSet 1");
+		set1 = new BarDataSet(yVals1, "DataSet 1");
+		set1.setColors(ColorTemplate.COLORFUL_COLORS);
 
-			ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
-			dataSets.add(set1);
+		ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
+		dataSets.add(set1);
 
-			//BarData data = new BarData(dataSets);
-			//data.setValueTextSize(10f);
-			// data.setValueTypeface(mTfLight);
-			//data.setBarWidth(barWidth);
-			//mChart.setData(data);
-
-		}
+		BarData data = new BarData(x, dataSets);
+		data.setValueTextSize(10f);
+		mChart.setData(data);
 	}
 }

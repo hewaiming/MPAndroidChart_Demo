@@ -22,6 +22,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	private Button btn_candlechart;
 	private Button btn_radarchart;
 	private Context mContext;
+	private Button btn_mulitLinechart;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		btn_scatterchart = (Button) findViewById(R.id.btn_scatterchart);
 		btn_candlechart = (Button) findViewById(R.id.btn_candlechart);
 		btn_radarchart = (Button) findViewById(R.id.btn_radarchart);
+		btn_mulitLinechart = (Button) findViewById(R.id.btn_multi_line_chart);
 
 		btn_linechart.setOnClickListener(this);
 
@@ -54,6 +56,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		btn_scatterchart.setOnClickListener(this);
 		btn_candlechart.setOnClickListener(this);
 		btn_radarchart.setOnClickListener(this);
+		btn_mulitLinechart.setOnClickListener(this);
 
 	}
 
@@ -84,6 +87,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			break;
 		case R.id.btn_radarchart:
 			intent = new Intent(MainActivity.this, RadarChartActivity.class);
+			break;
+		case R.id.btn_multi_line_chart:
+			intent = new Intent(MainActivity.this, MultiLineChartActivity.class);
 			break;
 		}
 		startActivity(intent);

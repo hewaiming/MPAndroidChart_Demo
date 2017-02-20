@@ -98,4 +98,15 @@
         android:layout_marginRight="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+     <Button
+        android:id="@+id/btn_multi_line_chart"
+        android:text="@string/multi_line_chart"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:background="#FF6600"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     </LinearLayout>
