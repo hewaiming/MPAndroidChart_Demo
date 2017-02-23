@@ -53,13 +53,13 @@ public class CandleChartActivity extends Activity {
 		xAxis.setPosition(XAxisPosition.BOTTOM);
 		xAxis.setDrawGridLines(false);
 
-		YAxis leftAxis = candlechart.getAxisLeft(); //左边Y轴数据刻度
+		YAxis leftAxis = candlechart.getAxisLeft(); // 左边Y轴数据刻度
 		// leftAxis.setEnabled(false);
 		leftAxis.setLabelCount(7, false);
 		leftAxis.setDrawGridLines(false);
 		leftAxis.setDrawAxisLine(false);
 
-		YAxis rightAxis = candlechart.getAxisRight();//右边Y轴数据刻度
+		YAxis rightAxis = candlechart.getAxisRight();// 右边Y轴数据刻度
 		rightAxis.setEnabled(false);
 		// rightAxis.setStartAtZero(false);
 		candlechart.setData(candleData);

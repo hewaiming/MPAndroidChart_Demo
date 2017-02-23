@@ -35,11 +35,11 @@ public class PieChartActivity extends Activity {
 	}
 
 	private void initPieChart() {
-		piechart=new PieChart(this);
+		piechart = new PieChart(this);
 		setContentView(piechart);
-		
-		piedata = getPieData(4, 100);    
-        showChart(piechart, piedata);  		
+
+		piedata = getPieData(4, 100);
+		showChart(piechart, piedata);
 	}
 
 	private void showChart(PieChart piechart2, PieData piedata2) {
@@ -79,52 +79,52 @@ public class PieChartActivity extends Activity {
 		piechart.setDescription("No Deal");// 设置描述文字
 		piechart.setDescriptionTextSize(20.f);// 设置描述文字的字体
 		piechart.animateXY(1000, 1000);
-		
+
 	}
 
 	private PieData getPieData(int count, int range) {
-		 ArrayList<String>  xVals = new ArrayList<String>();  //xVals用来表示每个饼块上的内容    
-		    
-	        for (int i = 0; i < count; i++) {    
-	        	 xVals.add("月" + (i + 1));  //饼块上显示成Quarterly1, Quarterly2, Quarterly3, Quarterly4    
-	        }    
-	    
-	        ArrayList<Entry> yValues = new ArrayList<Entry>();  //yVals用来表示封装每个饼块的实际数据    
-	    
-	        // 饼图数据    
-	        /**  
-	         * 将一个饼形图分成四部分， 四部分的数值比例为14:14:34:38  
-	         * 所以 14代表的百分比就是14%   
-	         */    
-	        float quarterly1 = 14;    
-	        float quarterly2 = 14;    
-	        float quarterly3 = 34;    
-	        float quarterly4 = 38;    
-	    
-	        yValues.add(new Entry(quarterly1, 0));    
-	        yValues.add(new Entry(quarterly2, 1));    
-	        yValues.add(new Entry(quarterly3, 2));    
-	        yValues.add(new Entry(quarterly4, 3));    
-	    
-	        //y轴的集合    
-	        PieDataSet pieDataSet = new PieDataSet(yValues, "小明每月支出");/*显示在比例图上*/    
-	        pieDataSet.setSliceSpace(0f); //设置个饼状图之间的距离    
-	    
-	        ArrayList<Integer> colors = new ArrayList<Integer>();    
-	    
-	        // 饼图颜色    
-	        colors.add(Color.rgb(205, 205, 205));    
-	        colors.add(Color.rgb(114, 188, 223));    
-	        colors.add(Color.rgb(255, 123, 124));    
-	        colors.add(Color.rgb(57, 135, 200));    
-	    
-	        pieDataSet.setColors(colors);    
-	    
-	        DisplayMetrics metrics = getResources().getDisplayMetrics();    
-	        float px = 5 * (metrics.densityDpi / 160f);    
-	        pieDataSet.setSelectionShift(px); // 选中态多出的长度    
-	    
-	        PieData pieData = new PieData(xVals, pieDataSet);    	            
-	        return pieData;    
+		ArrayList<String> xVals = new ArrayList<String>(); // xVals用来表示每个饼块上的内容
+
+		for (int i = 0; i < count; i++) {
+			xVals.add("月" + (i + 1)); // 饼块上显示成Quarterly1, Quarterly2,
+										// Quarterly3, Quarterly4
+		}
+
+		ArrayList<Entry> yValues = new ArrayList<Entry>(); // yVals用来表示封装每个饼块的实际数据
+
+		// 饼图数据
+		/**
+		 * 将一个饼形图分成四部分， 四部分的数值比例为14:14:34:38 所以 14代表的百分比就是14%
+		 */
+		float quarterly1 = 14;
+		float quarterly2 = 14;
+		float quarterly3 = 34;
+		float quarterly4 = 38;
+
+		yValues.add(new Entry(quarterly1, 0));
+		yValues.add(new Entry(quarterly2, 1));
+		yValues.add(new Entry(quarterly3, 2));
+		yValues.add(new Entry(quarterly4, 3));
+
+		// y轴的集合
+		PieDataSet pieDataSet = new PieDataSet(yValues, "小明每月支出");/* 显示在比例图上 */
+		pieDataSet.setSliceSpace(0f); // 设置个饼状图之间的距离
+
+		ArrayList<Integer> colors = new ArrayList<Integer>();
+
+		// 饼图颜色
+		colors.add(Color.rgb(205, 205, 205));
+		colors.add(Color.rgb(114, 188, 223));
+		colors.add(Color.rgb(255, 123, 124));
+		colors.add(Color.rgb(57, 135, 200));
+
+		pieDataSet.setColors(colors);
+
+		DisplayMetrics metrics = getResources().getDisplayMetrics();
+		float px = 5 * (metrics.densityDpi / 160f);
+		pieDataSet.setSelectionShift(px); // 选中态多出的长度
+
+		PieData pieData = new PieData(xVals, pieDataSet);
+		return pieData;
 	}
 }

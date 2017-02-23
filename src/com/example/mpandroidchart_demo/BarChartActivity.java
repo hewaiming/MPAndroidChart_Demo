@@ -40,12 +40,12 @@ public class BarChartActivity extends Activity {
 			// entries.add(BarEntry(float val,int positon);
 			entries.add(new BarEntry(profit, i));
 			xVals.add((i + 1) + "月");
-		}		
-		
+		}
+
 		dataSet = new BarDataSet(entries, "公司年利润报表");
 		dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-		data = new BarData(xVals, dataSet);		
-	    
+		data = new BarData(xVals, dataSet);
+
 		chart.setData(data);
 		// 设置Y方向上动画animateY(int time);
 		chart.animateY(3000);

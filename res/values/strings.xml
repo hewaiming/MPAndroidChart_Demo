@@ -13,5 +13,6 @@
     <string name="candlechart">蜡烛图</string>
     <string name="radarchart">雷达图</string>
     <string name="multi_line_chart">多条线</string>
+    <string name="mulit_barchart">多数据柱状图</string>
 
 </resources>

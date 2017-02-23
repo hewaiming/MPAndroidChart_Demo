@@ -42,6 +42,8 @@
         </activity>
         <activity android:name="com.example.mpandroidchart_demo.MultiLineChartActivity" >
         </activity>
+         <activity android:name="com.example.mpandroidchart_demo.MultiBarChartActivity" >
+        </activity>
     </application>
 
 </manifest>

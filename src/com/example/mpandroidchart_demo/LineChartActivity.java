@@ -26,7 +26,7 @@ public class LineChartActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		MyApplication.getInstance().addActivity(this);
-		init_chart();			
+		init_chart();
 	}
 
 	private void init_chart() {
@@ -40,14 +40,15 @@ public class LineChartActivity extends Activity {
 			yVals.add(new Entry(profix, i));
 			xVals.add((i + 1) + "月");
 		}
-		
+
 		dataSet = new LineDataSet(yVals, "公司年度利润");
 		dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-		data = new LineData(xVals, dataSet);	
-		
+		data = new LineData(xVals, dataSet);
+
 		chart.setData(data);
 		chart.setDescription("公司年度利润");
 		chart.animateY(3000);
-		//chart.saveToGallery("mychart.jpg", 100); // 保存图表，85 is the quality of the image
+		// chart.saveToGallery("mychart.jpg", 100); // 保存图表，85 is the quality of
+		// the image
 	}
 }

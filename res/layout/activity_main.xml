@@ -43,6 +43,17 @@
         android:layout_marginRight="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+     <Button
+        android:id="@+id/btn_multi_barchart"
+        android:text="@string/mulit_barchart"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:background="#C5FF8C"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <Button
         android:id="@+id/btn_combinedchart"
         android:text="@string/combinedchart"

@@ -38,11 +38,11 @@ public class CombinedChartActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		MyApplication.getInstance().addActivity(this);
 		combinedChart = new CombinedChart(this);
-		setContentView(combinedChart);	
-		
+		setContentView(combinedChart);
+
 		initChart();
-		//loadChartData_simple(50);
-		 loadChartData(60);
+		// loadChartData_simple(50);
+		loadChartData(60);
 	}
 
 	private void loadChartData_simple(int count) {
@@ -55,7 +55,7 @@ public class CombinedChartActivity extends Activity {
 
 		barData = generateBarData(count);
 		combinedData.setData(barData); // 增加柱形图
-		
+
 		combinedChart.setData(combinedData);// 当前屏幕会显示所有的数据
 		combinedChart.invalidate();
 	}
@@ -64,8 +64,8 @@ public class CombinedChartActivity extends Activity {
 		ArrayList<Entry> yVals = new ArrayList<Entry>();
 		random = new Random();
 		for (int i = 0; i < count; i++) {
-			float profix = random.nextFloat()+2;
-			yVals.add(new Entry(profix, i));			
+			float profix = random.nextFloat() + 2;
+			yVals.add(new Entry(profix, i));
 		}
 
 		LineDataSet dataSet = new LineDataSet(yVals, "公司年度利润");
@@ -105,7 +105,7 @@ public class CombinedChartActivity extends Activity {
 		YAxis rightAxis = combinedChart.getAxisRight();
 		rightAxis.setEnabled(false);
 
-		//combinedChart.setData(CombinedData);// 设置数据
+		// combinedChart.setData(CombinedData);// 设置数据
 
 		Legend legend = combinedChart.getLegend();
 		legend.setPosition(Legend.LegendPosition.ABOVE_CHART_RIGHT);
@@ -124,19 +124,19 @@ public class CombinedChartActivity extends Activity {
 		/* ma5 */
 		ArrayList<Entry> ma5Entries = new ArrayList<Entry>();
 		for (int index = 0; index < count; index++) {
-			float profix = random.nextFloat()+1;
+			float profix = random.nextFloat() + 1;
 			ma5Entries.add(new Entry(profix, index));
 		}
 		/* ma10 */
 		ArrayList<Entry> ma10Entries = new ArrayList<Entry>();
 		for (int index = 0; index < count; index++) {
-			float profix = random.nextFloat()+2;
+			float profix = random.nextFloat() + 2;
 			ma10Entries.add(new Entry(profix, index));
 		}
 		/* ma20 */
 		ArrayList<Entry> ma20Entries = new ArrayList<Entry>();
 		for (int index = 0; index < count; index++) {
-			float profix = random.nextFloat()+2.4f;
+			float profix = random.nextFloat() + 2.4f;
 			ma20Entries.add(new Entry(profix, index));
 		}
 
@@ -159,7 +159,7 @@ public class CombinedChartActivity extends Activity {
 		// ArrayList<String> xVals = new ArrayList<String>();// 横坐标标签
 		random = new Random();// 随机数
 		for (int i = 0; i < count; i++) {
-			float profit = random.nextFloat()/10 ;
+			float profit = random.nextFloat() / 10;
 			// entries.add(BarEntry(float val,int positon);
 			entries.add(new BarEntry(profit, i));
 			// xVals.add((i + 1) + "日");
@@ -176,7 +176,7 @@ public class CombinedChartActivity extends Activity {
 		for (int i = 0; i < lineDataSets.length; i++) {
 			dataSets.add(lineDataSets[i]);
 		}
-		
+
 		LineData data = new LineData(xVals, dataSets);
 
 		return data;

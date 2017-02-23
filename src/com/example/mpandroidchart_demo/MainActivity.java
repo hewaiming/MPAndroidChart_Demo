@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener {	
 	private Button btn_linechart;
 	private Button btn_barchart, btn_horizonalbarchart;
 	private Button btn_combinedchart;
@@ -22,7 +22,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	private Button btn_candlechart;
 	private Button btn_radarchart;
 	private Context mContext;
-	private Button btn_mulitLinechart;
+	private Button btn_multiLineChart;
+	private Button btn_multiBarChart;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		btn_scatterchart = (Button) findViewById(R.id.btn_scatterchart);
 		btn_candlechart = (Button) findViewById(R.id.btn_candlechart);
 		btn_radarchart = (Button) findViewById(R.id.btn_radarchart);
-		btn_mulitLinechart = (Button) findViewById(R.id.btn_multi_line_chart);
+		btn_multiLineChart = (Button) findViewById(R.id.btn_multi_line_chart);
+		btn_multiBarChart=(Button) findViewById(R.id.btn_multi_barchart);
 
 		btn_linechart.setOnClickListener(this);
 
@@ -56,7 +58,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		btn_scatterchart.setOnClickListener(this);
 		btn_candlechart.setOnClickListener(this);
 		btn_radarchart.setOnClickListener(this);
-		btn_mulitLinechart.setOnClickListener(this);
+		btn_multiLineChart.setOnClickListener(this);
+		btn_multiBarChart.setOnClickListener(this);
 
 	}
 
@@ -90,6 +93,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			break;
 		case R.id.btn_multi_line_chart:
 			intent = new Intent(MainActivity.this, MultiLineChartActivity.class);
+			break;
+		case R.id.btn_multi_barchart:
+			intent = new Intent(MainActivity.this, MultiBarChartActivity.class);
 			break;
 		}
 		startActivity(intent);
